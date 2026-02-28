@@ -13,8 +13,9 @@ def img2text(url):
 
 # text2story
 def text2story(text):
-    pipe = pipeline("text-generation", model="pranavpsv/genre-story-generator-v2")
-    story_text = pipe(text)[0]['generated_text']
+    pipe = pipeline("text-generation", model="microsoft/phi-2")
+    story_text = pipe("Write a short bedtime story for a 6-year-old about a brave little rabbit who learns kindness:")[0]["generated_text"]
+
     return story_text
 
 # text2audio
